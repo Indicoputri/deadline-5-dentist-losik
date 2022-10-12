@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> Data Detail Pelayanan </h1>
+    <table>
+        <thead>
+            <tr>
+                <th>
+                    ID Detail Pelayanan
+                </th>
+                <th>
+                    ID Pendaftaran
+                </th>
+                <th>
+                    ID Pelayanan
+                </th>
+                <th>
+                    Jumlah Pelayanan
+                </th>
+                <th>
+                    Action
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in detailpelayanan %}
+            <tr>
+                <td>DP00{{item.iddetailpelayanan}}</td>
+                <td>{{item.idpendaftaran}}</td>
+                <td>{{item.idpelayanan}}</td>
+                <td>{{item.jumlahpelayanan}}</td>
+                <td>
+                    <a href="{% url 'updatedatadetailpelayanan' item.iddetailpelayanan %}">
+                        <button>Update</button>
+                    </a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="{% url 'createdatadetailpelayanan' %}">
+        <button>Tambah Pendaftaran</button>
+    </a>
+    <a href="{% url 'home' %}">
+        <button>Back</button>
+    </a>
+</body>
+</html>

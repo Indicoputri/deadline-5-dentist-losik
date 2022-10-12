@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update data pelayanan</title>
+</head>
+<body>
+    <th> Update Data Pelayanan</th>
+    <form action=""method = 'post'>
+        {% csrf_token %}
+        <table>
+            <tbody>
+                <tr>
+                    <th>Nama Pelaynana</th>
+                    <td>
+                        <input type="text" name = "namapelayanan" value = {{pelayananobj.namapelayanan}}>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Harga Pelayanna</th>
+                    <td>
+                        <input type="text" name = "hargapelayanan" value = {{pelayananobj.hargapelayanan}}>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <button type ="Submit">Submit Update</button>
+    </form>
+<a href="{% url 'pelayanan' %}">
+    <button> Back </button>
+</a>
+</body>
+</html>

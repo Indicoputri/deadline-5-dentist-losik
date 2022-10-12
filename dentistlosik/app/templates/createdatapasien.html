@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Data Pasien</title>
+</head>
+<body>
+    <h1> Create Data Pasien </h1> 
+    <form action="" method="post">
+        {% csrf_token %}
+        <table>
+            <tr>
+                <th>Nama</th>
+                <td>
+                    <input type="text" name="namapasien">
+                </td>
+            </tr>
+            <tr>
+                <th>Jenis kelamin</th>
+                <td>
+                    <select name="jeniskelamin">
+                        <option value="Perempuan">Perempuan</option>
+                        <option value="Laki-laki">Laki-laki</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <th>Alamat Pasien</th>
+                <td>
+                    <input type="text" name="alamatpasien">
+                </td>
+            </tr> 
+            <tr>
+                <th>No HP</th>
+                <td>
+                    <input type="number" name="nohppasien">
+                </td>
+                </tr>
+            </table>
+            <button type="submit" >Submit</button>
+    </form>  
+<a href="{% url 'home' %}">
+    <button>Home</button>
+</a>  
+</body>
+</html>

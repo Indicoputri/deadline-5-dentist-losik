@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Dokter Gigi </title>
+</head>
+<body>
+    <h1>Dokter Gigi</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>
+                    ID Dokter
+                </th>
+                <th>
+                    Nama Dokter
+                </th>
+                <th>
+                    Alamat Dokter
+                </th>
+                <th>
+                    No HP
+                </th>
+                <th>
+                    Action
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in doktergigiall %}
+            <tr>
+                <td>DG00{{item.iddoktergigi}}</td>
+                <td>{{item.namadoktergigi}}</td>
+                <td>{{item.alamatdoktergigi}}</td>
+                <td>{{item.nohpdoktergigi}}</td>
+                <td>
+                    <a href="{% url 'updatedatadoktergigi' item.iddoktergigi %}">
+                        <button>Update</button>
+                    </a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+<a href="{% url 'home' %}">
+    <button>Home</button>
+</a>
+</body>
+</html>
